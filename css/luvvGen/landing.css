@@ -67,12 +67,12 @@ body{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .nav-list-item{
-    margin: auto;
+    margin: 15px;
     transition: transform .3s ease-out;
 }
 
@@ -107,24 +107,32 @@ body{
 
 
 
-.header{
-    width: 60%;
-    height: 15%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: auto;
-}
-
 .content{
     position: relative;
     display: flex;
     width: 100%;
     align-items: center;
     flex-direction: column;
-    top: 5vh;
+}
+
+.info-content{
+    height: 90%;
+    top: 3vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header{
+    text-decoration: underline;
+}
+
+.info-content{
+    margin: 15px;
+}
+
+.info-p{
+    margin-top:15px;
 }
 
 .reference{
