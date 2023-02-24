@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luvvIcon</title>
+    <link rel="stylesheet" href="/css/luvvGen/landing.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assetts/luvvGen/favicon-3.png">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="site-wrap">
+        <div class="nav">
+            <div class="logo">
+                <img class="logo-img" src="#">
+            </div>
+            <div class="nav-links">
+                <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/index.html">Home</a></li>
+                    <li id="active" class="nav-list-item"><a href="/html/luvvGen/luvvGen.html">luvvIcons</a></li>
+                    <li class="nav-list-item"><a href="/html/luvvBox/luvvBox.html">luvvBox</a></li>
+                    <li class="nav-list-item"><a href="/html/luvvRip/luvvRip.html">luvvRip</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1 class="title">luvvIcon v1.0.1</h1>
+                <p class="info">
+                    Introducing luvvIcon - the ultimate solution for creating custom favicons that truly reflect your
+                    brand. With luvvIcon, designing a unique favicon is no longer reserved for designers with technical
+                    skills - anyone can now easily create a favicon that stands out and perfectly complements their
+                    website or application.
+                    <br><br>
+                    Our intuitive and user-friendly interface allows you to input various design elements, including the
+                    text you want to appear on the favicon, font size, font style, and text color. Choose from an array
+                    of background colors, add an icon, and customize it with your preferred icon color. You also have
+                    the flexibility to move both the text and the icon around to create the perfect composition that
+                    represents your brand.
+                    <br><br>
+                    luvvIcon simplifies the process of creating custom favicons by downloading your design in three
+                    different sizes - 16x16, 32x32, and 64x64 - in both PNG and ICO file formats. Your downloaded files
+                    are then zipped into a single folder, making it easy to access and use across different platforms.
+                </p>
+                <ul class="help">
+                    <li><a href="https://www.w3schools.com/html/html_favicon.asp">How to add Favicon to website</a></li>
+                    <li><a
+                            href="https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon">How
+                            to add Favicon to Squarespace</a></li>
+                    <li><a href="https://help.shopify.com/en/manual/online-store/images/add-favicon">How to add Favicon
+                            to
+                            Shopify</a></li>
+                    <li><a href="https://www.wix.com/blog/2019/07/what-is-favicon-how-to-make/">How to add Favicon to
+                            Wix</a></li>
+                </ul>
+            </div>
+            <div class="form-wrapper">
+                <form class="generator">
+                    <div class="form-child">
+                        <label for="shape-selector">Choose Canvas Shape:</label>
+                        <select id="shape-selector">
+                            <option value="square">Square</option>
+                            <option value="rounded-rect">Rounded Rectangle</option>
+                            <option value="circle">Circle</option>
+                        </select>
+                    </div>
+                    <div id="special">
+                        <label for="border-radius-selector">Choose Border Radius:</label>
+                        <input type="range" id="border-radius-selector" min="0" max="20" value="5">
+                    </div>
+                    <div class="form-child">
+                        <label for="input">Enter Text:</label>
+                        <input type="text" id="input" placeholder="...">
+                    </div>
+                    <div class="form-child">
+                        <label for="text-color-picker">Choose Text Color:</label>
+                        <input type="color" id="text-color-picker" value="#ffffff">
+                    </div>
+                    <div class="form-child">
+                        <label for="background-color-picker">Choose Background Color:</label>
+                        <input type="color" id="background-color-picker" value="#000000">
+                    </div>
+                    <div class="form-child">
+                        <label for="font-selector">Choose Font:</label>
+                        <select id="font-selector">
+                            <option value="Arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Brush Script MT">Brush Script MT</option>
+                            <option value="Copperplate">Copperplate</option>
+                        </select>
+                    </div>
+                    <div class="form-child">
+                        <label for="weight-selector">Choose Font Size:</label>
+                        <input type="range" id="weight-selector" min="0" max="50" value="39">
+                    </div>
+                    <div class="form-child">
+                        <label for="x-pos-selector">Text X-Position:</label>
+                        <input type="range" id="x-pos-selector" min="-30" max="30" value="0">
+                    </div>
+                    <div class="form-child">
+                        <label for="y-pos-selector">Text Y-Position:</label>
+                        <input type="range" id="y-pos-selector" min="0" max="60" value="30">
+                    </div>
+                    <button id="text-reset-button" type="button">Reset Text Position</button>
+                    <button id="generate-btn" type="button" onclick="generateFavicon()">Generate Favicon</button>
+                </form>
+                <div class="right-col">
+                    <div class="canvas-wrapper">
+                        <div class="canvas-child">
+                            <div class="holder">
+                                <canvas id="canvas"></canvas>
+                            </div>
+                            <p class="label">16x16</p>
+                        </div>
+                        <div class="canvas-child">
+                            <div class="holder">
+                                <canvas id="canvas2"></canvas>
+                            </div>
+                            <p class="label">32x32</p>
+                        </div>
+                        <div class="canvas-child">
+                            <div class="holder">
+                                <canvas id="canvas3"></canvas>
+                            </div>
+                            <p class="label">64x64</p>
+                        </div>
+                    </div>
+                    <button id="download-btn" type="button" onclick="downloadFavicon()">Download Favicon</button>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/jszip@3.7.1/dist/jszip.min.js"></script>
+                <script src="/js/luvvGen/generate.js"></script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

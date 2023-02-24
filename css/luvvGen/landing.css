@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+}
+
+:root{
+    --bg-color: #ffff;
+    --nav-color: #2f2f2f;
+    --child-color: #aeaeae;
+    --link-color: #ffff;
+    --link-active: rgb(200, 115, 237);
+    --link-active-underline: rgb(99, 56, 117);
+    --form-color: #b6b6b6ce;
+}
+
+body{
+    height: 120vh;
+    width: 100%;
+}
+
+
+.site-wrap{
+    height: 100%;
+    width: 100%;
+}
+
+/* 
+
+    !!! Start Navbar !!!
+
+*/
+.nav{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--nav-color);
+}
+
+.logo{
+    width: 15%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img{
+    margin: 10px;
+    object-fit: cover;
+    border: 2px solid blue;
+}
+
+.nav-links{
+    width: 75%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list-item{
+    margin: auto;
+    transition: transform .3s ease-out;
+}
+
+.nav-list-item a{
+    color: var(--link-color);
+    font-size: larger;
+}
+
+.nav-list-item:hover{
+    transform: translate(0, -3px);
+}
+
+.nav-list-item:hover a{
+    color: var(--link-active);
+    text-decoration: underline;
+    text-decoration-color: var(--link-active-underline);
+}
+
+#active{
+    color: var(--link-active);
+    text-decoration: underline;
+    text-decoration-color: var(--link-active-underline);
+}
+#active a{
+    color: var(--link-active);
+}
+/* 
+
+   !!! End Navbar !!!
+
+*/
+
+
+
+.header{
+    width: 60%;
+    height: 15%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.content{
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    top: 5vh;
+}
+
+.reference{
+    width: 75%;
+    margin-top: 20px;
+}
+
+.form-wrapper{
+    background-color: var(--form-color);
+    border-radius: 15px;
+    position: relative;
+    top: 5vh;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form */
+.generator{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 15px;
+}
+
+.form-child{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+#special{
+    display: none;
+    flex-direction: column;
+    margin: 5px;
+}
+
+#input{
+    width: 5vw;
+}
+
+#shape-selector{
+    width: 5vw;
+}
+
+#text-color-picker{
+    width: 5vw;
+}
+
+#background-color-picker{
+    width: 5vw;
+}
+
+#font-selector{
+    width: 5vw;
+}
+
+#weight-selector{
+    width: 15vw;
+}
+
+#x-pos-selector{
+    width: 15vw;
+}
+
+#y-pos-selector{
+    width: 15vw;
+}
+
+#generate-btn{
+    width: 10vw;
+    margin-top: 15px;
+    display: none;
+}
+
+#text-reset-button{
+    width: 15vw;
+}
+
+.right-col{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#download-btn{
+    width: 10vw;
+    margin-top: 45px;
+    align-self: center;
+}
+
+.holder{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.label{
+    align-self: baseline;
+}
+
+.canvas-child{
+    height: 10vh;
+    width: 10vh;
+    text-align: center;
+}
+
+#canvas{
+    margin: 5px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    border: 1px dotted rgba(0, 0, 0, 0.713);
+}
+#canvas2{
+    margin: 5px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    border: 1px dotted rgba(0, 0, 0, 0.713);
+}
+#canvas3{
+    margin: 5px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    border: 1px dotted rgba(0, 0, 0, 0.713);
+}
+
+.canvas-wrapper{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* End Form */
