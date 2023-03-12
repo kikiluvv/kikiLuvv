@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,94 +7,203 @@
     font-family: 'Lato', sans-serif;
 }
 
-:root{
-    --bg-color: #ffff;
-    --nav-color: #2f2f2f;
+:root {
+    --text-color: white;
+    --bg-color: rgb(128, 128, 128);
+    --nav-color: #2a2a2a;
     --child-color: #aeaeae;
     --link-color: #ffff;
     --link-active: rgb(200, 115, 237);
     --link-active-underline: rgb(99, 56, 117);
 }
 
-.site-wrapper{
+body {
+    height: 100dvh;
+    background-color: var(--bg-color);
+    overflow-y: hidden;
+}
+
+.nav{
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    top: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav-item{
+    color: black;
+    font-size: x-large;
+    margin: 30px;
+    outline: 2px solid red;
+    outline-offset: 10px;
+    outline-style: dotted;
+    border-radius: 15px;
+    transition: all 0.1s ease;
+}
+
+.nav-item:hover{
+    background-color: black;
+    outline-offset: 3px;
+    color: white;
+    outline: 3px solid red;
+    border: 5px solid black;
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.navhide{
+    display: none;
+}
+
+/* project section */
+.project-wrapper {
+    position: absolute;
     height: 100%;
     width: 100%;
+    top: 0;
+    left: -101%;
 }
 
-/* 
-
-    !!! Start Navbar !!!
-
-*/
-.nav{
-    position: relative;
-    display: flex;
-    flex-direction: row;
+.collections-wrapper {
+    position: absolute;
+    height: 100%;
     width: 100%;
-    height: 10vh;
-    background-color: var(--nav-color);
+    top: 0;
+    right: -101%;
 }
 
-.logo{
-    width: 15%;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-img{
-    margin: 10px;
-    object-fit: cover;
-    border: 2px solid blue;
-}
-
-.nav-links{
-    width: 75%;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.nav-list{
+.stories-wrapper {
+    position: absolute;
+    height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    top: 0;
+    top: -101%;
 }
 
-.nav-list-item{
-    margin: 15px;
-    transition: transform .3s ease-out;
+.swiping-left {
+    animation: swipe-left 1s forwards;
+    animation-delay: 0.5s;
 }
 
-.nav-list-item a{
-    color: var(--link-color);
-    font-size: larger;
+@keyframes swipe-left {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-101%);
+    }
 }
 
-.nav-list-item:hover{
-    transform: translate(0, -3px);
+.swiping-right {
+    animation: swipe-right 1s forwards;
+    animation-delay: 0.5s;
 }
 
-.nav-list-item:hover a{
-    color: var(--link-active);
-    text-decoration: underline;
-    text-decoration-color: var(--link-active-underline);
+@keyframes swipe-right {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(101%);
+    }
 }
 
-#active{
-    color: var(--link-active);
-    text-decoration: underline;
-    text-decoration-color: var(--link-active-underline);
+.swiping-down {
+    animation: swipe-down 1s forwards;
+    animation-delay: 0.5s;
 }
-#active a{
-    color: var(--link-active);
+
+@keyframes swipe-down {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(101%);
+    }
 }
-/* 
 
-   !!! End Navbar !!!
+/* spell section */
 
-*/
+.site-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: -101%;
+}
 
+.swiping {
+    animation: swipe 1s forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes swipe {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(-101%);
+    }
+}
+
+.stars,
+.twinkling,
+.clouds {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stars {
+    z-index: 0;
+    background: #000 url('/assetts/global/stars.png') repeat top center;
+}
+
+.twinkling {
+    z-index: 1;
+    background: transparent url('/assetts/global/stars1.png') repeat top center;
+    animation-name: move-twink-back;
+    animation-duration: 200s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.clouds {
+    z-index: 2;
+    background: transparent url('/assetts/global/clouds.png') repeat top center;
+    animation-name: move-clouds-back;
+    animation-duration: 200s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 10000px 0;
+    }
+}

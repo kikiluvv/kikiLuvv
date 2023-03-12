@@ -1,4 +1,4 @@
-
+// index scroll elements
 function scroll1(){
     document.getElementById('cont-1').scrollIntoView({
         behavior: 'smooth'
@@ -22,3 +22,4 @@ function scroll4(){
         behavior: 'smooth'
     });    
 }
+// end index scroll elements
