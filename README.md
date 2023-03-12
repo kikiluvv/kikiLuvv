@@ -1,10 +1,4 @@
 ## Hai 👋
-hi my name is kiki luvv (they/them), I am an amateur music producer and web developer >.<
-<br>i'm from seattle
-<br>I enjoy cloudy days
-<br>Feel free to message me on [discord](https://discord.gg/WBEREuW582) if needed ^-^
-<br>[Here's my website](kikiluvv.netlify.app)
-
 
 ## Project Repos
 - [my website](https://github.com/kikiluvv/kikiLuvv)
